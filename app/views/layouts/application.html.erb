@@ -29,7 +29,6 @@
     <li class="nav-item">
       <a class="nav-link" href="<%= new_event_path %>">Create</a>   <!-- events#new-->
     </li>
-
     <a class="nav-item">
       <% if session[:user_id] %>
         div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -37,21 +36,20 @@
           <a class="dropdown-item">My profile</a>  <!-- users#show-->
         </div>
       <% elsif %>
-        <div class="dropdown">
-          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Bouton de connexion
-          </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item">S'inscrire</a>  <!-- registrations#new-->
-            <a class="dropdown-item">Se connecter</a>   <!-- sessions#new-->
-          </div>
-        </div>
+      <a class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Bouton d'actions
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <li><a class="dropdown-item" href="<%= new_user_registration_path %>">Sign up</a></li>
+        <li><a class="dropdown-item" href="<%= new_user_session_path %>">Log in</a></li>
+      </ul>
+    </a>
       <% end %>
     </a>
   </div>
-  <a class="dropdown-item">S'inscrire</a>  <!-- registrations#new-->
-        <a class="dropdown-item">Se connecter</a>   <!-- sessions#new-->
 </div>
+
     <%= yield %>
   </body>
 </html>
