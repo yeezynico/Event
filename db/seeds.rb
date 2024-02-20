@@ -14,7 +14,7 @@ Attendance.destroy_all
     first_name: first_name,
     last_name: last_name,
     email: email,
-    encrypted_password: 'password',
+    password: 'password',
     description: Faker::Books::Dune.quote)
 end
 puts "20 users have been created"
